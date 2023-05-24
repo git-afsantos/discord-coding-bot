@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: MIT
-# Copyright © 2021 André Santos
+# Copyright © 2023 André Santos
 
 ###############################################################################
 # Imports
 ###############################################################################
 
-import bakeapy
+import discodebot
 
 ###############################################################################
 # Tests
@@ -17,6 +17,6 @@ def test_import_was_ok():
 
 
 def test_pkg_has_version():
-    assert hasattr(bakeapy, '__version__')
-    assert isinstance(bakeapy.__version__, str)
-    assert bakeapy.__version__ != ''
+    assert hasattr(discodebot, '__version__')
+    assert isinstance(discodebot.__version__, str)
+    assert discodebot.__version__ != ''

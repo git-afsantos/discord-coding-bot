@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-# Copyright © 2021 André Santos
+# Copyright © 2023 André Santos
 
 ###############################################################################
 # Imports
@@ -12,8 +12,8 @@ from setuptools import find_packages, setup
 # Constants
 ###############################################################################
 
-PROJECT = 'bake-a-py'
-PYTHON_PKG = 'bakeapy'
+PROJECT = 'discord-coding-bot'
+PYTHON_PKG = 'discodebot'
 HERE = Path(__file__).parent
 
 ###############################################################################
@@ -39,14 +39,14 @@ setup(
         'local_scheme': 'dirty-tag',
         'fallback_version': '0.1.0',
     },
-    description='Variability analysis tool for ROS systems',
+    description='Discord Coding Bot',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     url=f'https://github.com/git-afsantos/{PROJECT}',
     author='André Santos',
-    author_email='haros.framework@gmail.com',
+    author_email='contact.andre.santos@gmail.com',
     license='MIT',
-    keywords='ros, variability, software product lines, feature models',
+    keywords='discord, programming, bot',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
     include_package_data=True,
@@ -54,24 +54,22 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
-        'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3 :: Only',
-        'Topic :: Scientific/Engineering',
-        'Topic :: Software Development',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Quality Assurance',
     ],
     entry_points={
         'console_scripts': [f'{PROJECT}={PYTHON_PKG}.cli:main'],
     },
     python_requires='>=3.8, <4',
-    install_requires=[],
+    install_requires=[
+        'attrs>=22.1',
+        'discord.py>=2.2',
+        # 'pyyaml>=5.3.1',
+    ],
     extras_require={
         'dev': ['pytest', 'tox'],
     },
@@ -79,6 +77,6 @@ setup(
     project_urls={
         'Source': f'https://github.com/git-afsantos/{PROJECT}/',
         'Tracker': f'https://github.com/git-afsantos/{PROJECT}/issues',
-        # 'Say Thanks!': 'http://saythanks.io/to/haros-framework',
+        # 'Say Thanks!': 'http://saythanks.io/to/oatspear',
     },
 )
