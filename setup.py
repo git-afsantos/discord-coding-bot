@@ -68,6 +68,8 @@ setup(
     install_requires=[
         'attrs>=22.1',
         'discord.py>=2.2',
+        'python-dotenv>=1.0',
+        'pyautogui',
         # 'pyyaml>=5.3.1',
     ],
     extras_require={

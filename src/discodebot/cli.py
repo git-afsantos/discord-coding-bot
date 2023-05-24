@@ -24,6 +24,8 @@ import argparse
 import sys
 
 from discodebot import __version__ as current_version
+# from discodebot.runner import run
+from discodebot.editor import run
 
 ###############################################################################
 # Argument Parsing
@@ -32,10 +34,13 @@ from discodebot import __version__ as current_version
 
 def parse_arguments(argv: Optional[List[str]]) -> Dict[str, Any]:
     msg = 'A short description of the project.'
-    parser = argparse.ArgumentParser(description=msg)
+    parser = argparse.ArgumentParser(description=msg)  # prog=discodebot
 
     parser.add_argument(
-        '--version', dest='version', action='store_true', help='Prints the program version.'
+        '--version',
+        action='version',
+        version=f'%(prog)s {current_version}',
+        help='Prints the program version.',
     )
 
     parser.add_argument(
@@ -79,9 +84,8 @@ def load_configs(args: Dict[str, Any]) -> Dict[str, Any]:
 def do_real_work(args: Dict[str, Any], configs: Dict[str, Any]) -> None:
     print(f'Arguments: {args}')
     print(f'Configurations: {configs}')
-    if args['version']:
-        print(f'Version: {current_version}')
 
+    run()
 
 ###############################################################################
 # Entry Point
