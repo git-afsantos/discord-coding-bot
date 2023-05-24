@@ -70,6 +70,7 @@ setup(
         'discord.py>=2.2',
         'python-dotenv>=1.0',
         'pyautogui',
+        'pygetwindow',
         # 'pyyaml>=5.3.1',
     ],
     extras_require={
