@@ -22,10 +22,13 @@ from typing import Any, Dict, List, Optional
 
 import argparse
 import sys
+import os
+
+if not os.environ.get('DISPLAY'):
+    os.environ['DISPLAY'] = ':0'
 
 from discodebot import __version__ as current_version
-# from discodebot.runner import run
-from discodebot.editor import run
+from discodebot.runner import run
 
 ###############################################################################
 # Argument Parsing

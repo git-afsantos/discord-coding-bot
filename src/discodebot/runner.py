@@ -10,9 +10,16 @@ import os
 import discord
 from dotenv import load_dotenv
 
+from discodebot.editor import write_code
+
 ###############################################################################
 # Entry Point
 ###############################################################################
+
+CODE = """
+def hello_world():
+    print('Hello, world!')
+"""
 
 def run():
     load_dotenv()
@@ -41,7 +48,16 @@ def run():
         print(f'  * channel: {message.channel}')
         print(f'  * content: {message.content}')
 
-        if message.content.startswith('ping'):
+        text = message.content
+        if text.startswith('ping'):
             await message.channel.send('pong')
+
+        if text.startswith('write '):
+            text = text[6:]
+            if text.startswith('function'):
+                write_code(CODE)
+            else:
+                await message.channel.send("I don't know how to do that yet :confused:")
+
 
     client.run(TOKEN)
